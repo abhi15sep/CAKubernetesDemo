@@ -173,3 +173,17 @@ Pods use PersistentVolumeClaims as storage
 # Demo
 
 ---
+
+# Statefulsets
+
+---
+
+# Demo
+
+---
+
+# Availability Groups
+
+---
+
+# Demo
