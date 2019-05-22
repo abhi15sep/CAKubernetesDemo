@@ -1,0 +1,52 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sqlserver
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: sqlserver
+    spec:
+      containers:
+      - name: sqlserver
+        image: mcr.microsoft.com/mssql/server:2019-CTP2.4-ubuntu
+        ports:
+        - containerPort: 1433
+        env:
+        - name: ACCEPT_EULA
+          value: "Y"
+        - name: MSSQL_DATA_DIR
+          value: /var/opt/sqlserver
+        - name: MSSQL_LOG_DIR
+          value: /var/opt/sqlserver
+        - name: SA_PASSWORD
+          value: "Testing1122"
+        volumeMounts:
+        - name: systemdata
+          mountPath: /var/opt/mssql
+        - name: userdata
+          mountPath: /var/opt/sqlserver
+      volumes:
+      - name: systemdata
+        persistentVolumeClaim:
+          claimName: mssql-systemdata
+      - name: userdata
+        persistentVolumeClaim:
+          claimName: mssql-userdata
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sqlserver-service
+  annotations: 
+    service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+spec:
+  ports:
+  - name: sqlserver
+    port: 1433
+    targetPort: 1433
+  selector:
+    name: sqlserver
+  type: LoadBalancer

@@ -1,0 +1,36 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: sqlserver2
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: sqlserver2
+    spec:
+      containers:
+      - name: sqlserver2
+        image: mcr.microsoft.com/mssql/server:2019-CTP2.5-ubuntu
+        ports:
+        - containerPort: 1433
+        env:
+        - name: SA_PASSWORD
+          value: "Testing1122"
+        - name: ACCEPT_EULA
+          value: "Y"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sqlserver-service
+  annotations: 
+    service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+spec:
+  ports:
+  - name: sqlserver
+    port: 1433
+    targetPort: 1433
+  selector:
+    name: sqlserver
+  type: LoadBalancer
