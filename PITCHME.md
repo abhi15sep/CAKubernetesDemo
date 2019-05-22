@@ -163,10 +163,10 @@ Pods use PersistentVolumeClaims as storage
 
 ### Statefulsets
 
-#### Designed for stateful applications
-#### Maintains a "sticky" identity for each pod
-#### Pods have a persistent identifier
-#### Used for SQL Server Availability Groups in K8s
+Designed for stateful applications<br>
+Maintains a "sticky" identity for each pod<br>
+Pods have a persistent identifier<br>
+Used for SQL Server Availability Groups in K8s
 
 ---
 
