@@ -20,24 +20,7 @@
 
 ---
 
-# Getting Started
-
----
-
-## Running Kubernetes locally
-
-Minikube<br>
-Docker for Desktop<br>
-Minishift<br>
-Micro k8s<br>
-
----
-
-## Other tools
-
-Visual Studio Code<br>
-Kubectl<br>
-kube-shell
+# Diving in
 
 ---
 
