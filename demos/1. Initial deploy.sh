@@ -16,6 +16,11 @@ kubectl config current-context
 
 
 
+# set location
+cd C:\git\dbafromthecold\CAKubernetesDemo\yaml
+
+
+
 # view nodes
 kubectl get nodes
 

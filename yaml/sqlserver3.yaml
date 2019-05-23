@@ -1,13 +1,13 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: sqlserver
+  name: sqlserver3
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: sqlserver
+        name: sqlserver3
     spec:
       containers:
       - name: sqlserver
@@ -39,14 +39,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: sqlserver-service
+  name: sqlserver3-service
   annotations: 
     service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
 spec:
   ports:
-  - name: sqlserver
+  - name: sqlserver3
     port: 1433
     targetPort: 1433
   selector:
-    name: sqlserver
+    name: sqlserver3
   type: LoadBalancer

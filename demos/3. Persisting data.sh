@@ -16,13 +16,13 @@ kubectl config current-context
 
 
 
+# set location
+cd C:\git\dbafromthecold\CAKubernetesDemo\yaml
+
+
+
 # view nodes
 kubectl get nodes
-
-
-
-# navigate to yaml file
-cd C:\git\dbafromthecold\CA-kubernetesDemo\yaml
 
 
 
@@ -166,3 +166,12 @@ kubectl get pods
 
 # get service
 kubectl get service
+
+
+
+# clean up
+kubectl delete deployment sqlserver3
+kubectl delete service sqlserver3-service
+
+kubectl get pvc
+kubectl get pv
