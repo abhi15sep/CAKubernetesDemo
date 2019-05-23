@@ -68,16 +68,5 @@ exit
 
 
 
-# expose service
-kubectl expose deployment sqlserver --type=LoadBalancer --port=1433 --target-port=1433
-
-
-
-# get service IP
-kubectl get services
-
-
-
 # clean up
 kubectl delete deployment sqlserver
-kubectl delete service sqlserver

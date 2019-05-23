@@ -31,11 +31,6 @@ kubectl create namespace ag1
 
 
 
-# set location
-cd C:\git\dbafromthecold\CAKubernetes\yaml
-
-
-
 # create operator
 kubectl apply -f operator.yaml --namespace ag1
 
@@ -52,7 +47,7 @@ kubectl create secret generic sql-secrets --from-literal=sapassword="Testing1122
 
 
 # deploy sql server
-kubectl apply -f sqlserver.yaml --namespace ag1
+kubectl apply -f sqlserver_ags.yaml --namespace ag1
 
 
 
@@ -78,6 +73,21 @@ kubectl apply -f ag-services.yaml --namespace ag1
 
 # get services
 kubectl get services --namespace ag1 -o wide
+
+
+
+# perform failover
+kubectl apply -f failover.yaml --namespace ag1
+
+
+
+# describe failover job
+kubectl describe jobs/manual-failover --namespace ag1
+
+
+
+# delete job 
+kubectl delete job manual-failover --namespace ag1
 
 
 
