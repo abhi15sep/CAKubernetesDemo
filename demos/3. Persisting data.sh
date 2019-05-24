@@ -32,7 +32,7 @@ cat storageclass.yaml
 
 
 # deploy to cluster
-kubectl apply -f storageclass.yaml
+kubectl create -f storageclass.yaml
 
 
 
@@ -47,7 +47,8 @@ cat persistentvolumeclaim.yaml
 
 
 # deploy to cluster
-kubectl apply -f persistentvolumeclaim.yaml
+kubectl apply -f persistentvolumeclaim_system.yaml
+kubectl apply -f persistentvolumeclaim_user.yaml
 
 
 
@@ -63,26 +64,6 @@ kubectl describe persistentvolumeclaim
 
 # view persistent volume
 kubectl get persistentvolume
-
-
-
-# create secret
-kubectl create secret generic mssql --from-literal=SA_PASSWORD="Testing1122"
-
-
-
-# view secret
-kubectl get secrets
-
-
-
-# describe secret
-kubectl describe secret
-
-
-
-# view sql yaml file
-cat sqlserver3.yaml
 
 
 
@@ -173,5 +154,6 @@ kubectl get service
 kubectl delete deployment sqlserver3
 kubectl delete service sqlserver3-service
 
-kubectl get pvc
-kubectl get pv
+kubectl delete pvc mssql-systemdata mssql-userdata
+
+kubectl delete storageclass mssql-storage

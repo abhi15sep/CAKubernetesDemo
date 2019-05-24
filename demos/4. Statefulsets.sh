@@ -26,6 +26,16 @@ kubectl get nodes
 
 
 
+# create storage class
+kubectl apply -f storageclass.yaml
+
+
+
+# view storage class
+kubectl get storageclass
+
+
+
 # deploy statefulset
 kubectl apply -f statefulset.yaml
 
@@ -72,7 +82,7 @@ kubectl delete statefulset mssql
 kubectl delete service mssql-hl-service
 kubectl delete service mssql-service
 
-kubectl get pvc
+kubectl delete pvc mssql-system-mssql-0
 kubectl get pv
 
 

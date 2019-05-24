@@ -26,11 +26,6 @@ kubectl get nodes
 
 
 
-# view sql yaml file
-cat sqlserver2.yaml
-
-
-
 # deploy to cluster
 kubectl apply -f sqlserver2.yaml
 

@@ -7,7 +7,7 @@ kubectl config get-contexts
 
 
 # switch context to aws cluster
-kubectl config use-context arn:aws:eks:us-east-1:048429195773:cluster/dbops_eks_poc
+kubectl config use-context docker-for-desktop
 
 
 
@@ -27,17 +27,17 @@ kubectl get nodes
 
 
 # deploy pod
-kubectl run sqlserver --image=mcr.microsoft.com/mssql/server:2019-CTP2.5-ubuntu `
+kubectl run sqlserver --image=mcr.microsoft.com/mssql/server:2019-CTP3.0-ubuntu `
 --env ACCEPT_EULA=Y --env SA_PASSWORD=Testing1122
 
 
 
-# view deployment
+# get deployment
 kubectl get deployments
 
 
 
-# view pod
+# get pod
 kubectl get pods
 
 
@@ -68,5 +68,16 @@ exit
 
 
 
+# expose service
+kubectl expose deployment sqlserver --type=LoadBalancer --port=1433 --target-port=1433
+
+
+
+# get service IP
+kubectl get services
+
+
+
 # clean up
 kubectl delete deployment sqlserver
+kubectl delete service sqlserver
