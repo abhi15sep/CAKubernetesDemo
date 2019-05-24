@@ -20,7 +20,14 @@
 
 ---
 
-# Diving in
+# Working locally
+
+---
+
+Docker for Desktop<br>
+Visual Studio Code<br>
+Kubectl<br>
+Azure Data Studio
 
 ---
 
