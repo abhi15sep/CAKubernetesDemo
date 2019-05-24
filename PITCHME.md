@@ -153,8 +153,7 @@ Pods use PersistentVolumeClaims as storage
 
 ---?code=assets/code/sqlserver_pvc.yaml&lang=yaml&title=Using Persistent Volume Claims
 
-@[20-24](Referencing secret storing SA PASSWORD)
-@[25-31](Reference to PVC)
+@[22-28](Reference to PVC)
 
 ---
 
