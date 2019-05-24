@@ -1,3 +1,5 @@
-# CA-KubernetesDemo
+# CA KubernetesDemo
 
-Slides and scripts for CA K8s presentation
+Scripts for CA K8s presentation
+
+Slides can be found at:- https://gitpitch.com/dbafromthecold/CAKubernetesDemo
