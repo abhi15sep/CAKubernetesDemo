@@ -151,10 +151,6 @@ Pods use PersistentVolumeClaims as storage
 @[1-8](Create storage class)
 @[10-20](Define persistent volume claim)
 
----?code=assets/code/createsecret.yaml&lang=yaml&title=Creating Kubernetes Secret
-
-@[1](Create Secret)
-
 ---?code=assets/code/sqlserver_pvc.yaml&lang=yaml&title=Using Persistent Volume Claims
 
 @[20-24](Referencing secret storing SA PASSWORD)
