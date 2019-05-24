@@ -116,7 +116,7 @@ kubectl get pods -o wide
 
 
 # delete pod
-kubectl delete pod PODNAME
+kubectl delete pod sqlserver3-75bc8c7b9f-4dbbr
 
 
 
@@ -125,23 +125,13 @@ kubectl get pods -o wide
 
 
 
-# view pvc
-kubectl get pvc
-
-
-
-# get service
-kubectl get service
-
-
-
 # describe pod
 kubectl describe pods 
 
 
 
-# view pods
-kubectl get pods
+# view pvc
+kubectl get pvc
 
 
 
