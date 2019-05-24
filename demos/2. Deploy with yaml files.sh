@@ -7,7 +7,7 @@ kubectl config get-contexts
 
 
 # switch context to aws cluster
-kubectl config use-context arn:aws:eks:us-east-1:048429195773:cluster/dbops_eks_poc
+kubectl config use-context CLUSTERNAME
 
 
 
